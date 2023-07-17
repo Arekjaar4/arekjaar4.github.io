@@ -15,7 +15,7 @@
 
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="A new Flutter application.">
+  <meta name="description" content="Bienvenidos a la pagina de Salvador Martorell Benavent. Repasa su vida a traves de fotos, videos y lo más importante ¡su música!">
 
   <!-- iOS meta tags & icons -->
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -38,6 +38,24 @@
       window.addEventListener('flutter-first-frame', function () {
         navigator.serviceWorker.register('flutter_service_worker.js?v=1838666585');
       });
+    }
+	if ('wakeLock' in navigator) {
+      // Comprobar si es compatible con wake lock
+      try {
+        // Solicitar el bloqueo de suspensión
+        navigator.wakeLock.request('screen').then(function (wakeLock) {
+          // wakeLock es un objeto que representa el bloqueo de suspensión
+          // La pantalla no se apagará mientras esté activo
+          console.log('Bloqueo de suspensión activado');
+        }).catch(function (error) {
+          // El bloqueo de suspensión no pudo ser adquirido
+          console.error('Error al activar el bloqueo de suspensión:', error);
+        });
+      } catch (error) {
+        console.error('wakeLock no está disponible:', error);
+      }
+    } else {
+      console.error('El bloqueo de suspensión no es compatible');
     }
   </script>
   <script src="main.dart.js" type="application/javascript"></script>
