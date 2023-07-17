@@ -23084,7 +23084,7 @@ var $async$j6=P.m(function(a1,a2){if(a1===1){o=a2
 s=p}while(true)switch(s){case 0:b=null
 p=4
 s=7
-return P.i(a0.by(0,"smb/FontManifest.json"),$async$j6)
+return P.i(a0.by(0,"FontManifest.json"),$async$j6)
 case 7:b=a2
 p=2
 s=6
